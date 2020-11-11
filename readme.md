@@ -2,9 +2,14 @@
 
 ---
 
-Disclaimer: This is an ongoing work, not much is finalized yet.
+Disclaimer: 
+* This is an ongoing work, not much is finalized yet.
 
-The functions and how they are to be used is not yet really documented. Notebooks in the __Notebooks__ repository illustrate how to use top level classes and functions for each step.
+* The functions and how they are to be used is not yet really documented. Notebooks in the __Notebooks__ repository illustrate how to use top level classes and functions for each step. Functions are in __model__ folder. Their imports have to be adapted as they are currently configured to run on google colab with this repo in a folder of the google drive called 'Lol'
+
+* Github markdown seems broken for tables / color (in the draft)
+
+
 
 ---
 
@@ -70,13 +75,14 @@ We can see how efficient we are at recomposing a team:
 Team: Gragas, Ornn, Taric, Zoe, Kalista
 Remove: Kalista
 Top 5 probabilities of the encoder fed Gragas, Ornn, Taric, Zoe: 
+
 order in proba | champion
---- | --- | ---
-|0|       Ezreal|
-|1|      Kalista|
-|2|     Aphelios|
-|3|        Varus|
-|4| Miss Fortune|
+--- | --- 
+0|       Ezreal
+1|      Kalista
+2|     Aphelios
+3|        Varus
+4| Miss Fortune
 
 The manifestation of the bias of our data set here, is that we suppose teams are coherent, and we can say something about a champion given the rest of his team. But this is from a solo queue ladder where some people can sometime play only one champion (even in the 4500 best players of Europe): Hence the champion can be completely independant from his 'context'.
 
