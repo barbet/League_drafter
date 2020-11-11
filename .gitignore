@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# data
+data/images/**/*.png
+data/matchs
+data/raw
+figs/*.png
+
+# experiments
+models/model_saved/**
+
+# IDE
+.vscode
+
+# Videos
+*.mp4
+videos/ffmpeg.exe
+
+# keys
+data_collection/credits.py
