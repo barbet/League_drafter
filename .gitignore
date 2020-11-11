@@ -4,7 +4,8 @@ __pycache__/
 *$py.class
 
 # data
-data/images/**/*.png
+data/images/loading/
+data/images/spashs/
 data/matchs
 data/raw
 figs/*.png
