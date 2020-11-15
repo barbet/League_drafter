@@ -132,8 +132,16 @@ class Champ2Vec:
       workers=30,
       verbose=2)
 
-    # visualize training
+    # plot loss
     for key, value in res.history.items():
+      if 'loss' in key:
+          plt.plot(value, label=key)
+          plt.legend()
+    plt.show()
+
+    # plot metrics
+    for key, value in res.history.items():
+      if 'loss' not in key:
         plt.plot(value, label=key)
         plt.legend()
     plt.show()

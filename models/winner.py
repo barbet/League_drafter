@@ -105,23 +105,32 @@ class Winner:
     self.model = model
     print(self.model.summary())
 
-  def train(self, n_epochs):
+  def train(self, n_epochs, batch_size=512):
 
     saved_model = f'{self.model_path}/tmp_winner.hdf5'
-    mcp = ModelCheckpoint(saved_model, monitor="val_loss",
+    mcp = ModelCheckpoint(saved_model, monitor="val_accuracy",
                           save_best_only=True, save_weights_only=False,
                         verbose=0)
     res = self.model.fit(
       x = [self.Xtrain_blue, self.Xtrain_red],
       y = self.Ytrain,
-      batch_size = 512,
+      batch_size = batch_size,
       epochs = n_epochs,
       callbacks = [mcp],
       validation_data = ([self.Xval_blue, self.Xval_red], self.Yval),
       verbose=1
     )
 
+    # plot loss
     for key, value in res.history.items():
+      if 'loss' in key:
+          plt.plot(value, label=key)
+          plt.legend()
+    plt.show()
+
+    # plot metrics
+    for key, value in res.history.items():
+      if 'loss' not in key:
         plt.plot(value, label=key)
         plt.legend()
     plt.show()

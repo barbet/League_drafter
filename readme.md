@@ -107,8 +107,8 @@ Hence almost 4 points of determination is not that bad !
 
 # Agent training
 
-And then the final step (nothing on the repo yet)
+And then the final step. For now it is in development state and everything is in the dev_rl notebook.
 Our agent has to take an action for each phase of the draft, against an other agent.
 When the episode consisting of one draft is over, we can evaluate our agent policy thanks to our "oracle" that we just made.
-
+The agent will be based on a ppo implementation from [here](https://github.com/nikhilbarhate99/PPO-PyTorch), and will train either against a random agent, of againt an other ppo agent
 
